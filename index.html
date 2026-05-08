@@ -2,35 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S. Tutiyoshida</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>Shinnosuke Yoshida</h1>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo">Shinnosuke Yoshida</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-  <p>
-    Graduate School of Environmental Science, Hokkaido University
-  </p>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Physical Oceanography / Climate Dynamics</p>
+        <h1>Exploring Southern Ocean dynamics and Antarctic Bottom Water feedback.</h1>
+        <p class="hero-description">
+          I study ocean circulation, mesoscale eddies, and climate feedbacks using idealized ocean models.
+        </p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#research">View Research</a>
+          <a class="button secondary" href="#contact">Contact</a>
+        </div>
+      </div>
 
-  <h2>About</h2>
-  <p>
-    I am interested in physical oceanography, Southern Ocean circulation.
-  </p>
+      <div class="hero-card">
+        <p class="card-label">Research Focus</p>
+        <h2>Southern Ocean</h2>
+        <p>
+          Antarctic Bottom Water formation, meridional overturning circulation,
+          mesoscale eddy energetics, and ocean modeling with MITgcm.
+        </p>
+      </div>
+    </section>
+  </header>
 
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Southern Ocean circulation</li>
-    <li>Antarctic Bottom Water formation</li>
-    <li>Meridional overturning circulation</li>
-    <li>Mesoscale eddy dynamics</li>
-    <li>Ocean modeling with MITgcm</li>
-  </ul>
+  <main>
 
-  <h2>Contact</h2>
-  <p>
-    Email: your.email@example.com
-  </p>
+    <section id="about" class="section">
+      <div class="section-title">
+        <p class="section-label">About</p>
+        <h2>About me</h2>
+      </div>
+
+      <div class="content-box">
+        <p>
+          I am a graduate student at the Graduate School of Environmental Science,
+          Hokkaido University. My research interests lie in physical oceanography,
+          Southern Ocean circulation, Antarctic Bottom Water formation, and climate dynamics.
+        </p>
+        <p>
+          I use idealized ocean models to investigate how ocean circulation responds to
+          changes in forcing, topography, eddy activity, and buoyancy processes.
+        </p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-title">
+        <p class="section-label">Research</p>
+        <h2>Research interests</h2>
+      </div>
+
+      <div class="grid">
+        <div class="research-card">
+          <h3>Antarctic Bottom Water feedback</h3>
+          <p>
+            Investigating how reduced Antarctic Bottom Water formation can alter
+            lower and upper overturning circulation and affect heat transport toward Antarctica.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Southern Ocean circulation</h3>
+          <p>
+            Studying the dynamics of the Antarctic Circumpolar Current and its role
+            in connecting wind forcing, eddies, and meridional overturning circulation.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Mesoscale eddy energetics</h3>
+          <p>
+            Examining how mesoscale eddies interact with mean flows, topography,
+            and buoyancy forcing through energy conversion processes.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Ocean modeling</h3>
+          <p>
+            Using MITgcm and idealized numerical experiments to isolate mechanisms
+            controlling ocean circulation and climate feedbacks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="section-title">
+        <p class="section-label">Output</p>
+        <h2>Publications and presentations</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="year">2026</span>
+          <div>
+            <h3>Master's thesis</h3>
+            <p>
+              Energetics of the Antarctic Circumpolar Current under rough topography
+              and surface buoyancy forcing.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="year">2025</span>
+          <div>
+            <h3>Conference presentations</h3>
+            <p>
+              Details will be added here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <div class="section-title">
+        <p class="section-label">Links</p>
+        <h2>Profiles</h2>
+      </div>
+
+      <div class="link-box">
+        <a href="https://github.com/S-Tutiyoshida" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Google Scholar</a>
+        <a href="#" target="_blank">ORCID</a>
+        <a href="#" target="_blank">CV</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-title">
+        <p class="section-label">Contact</p>
+        <h2>Get in touch</h2>
+      </div>
+
+      <div class="content-box">
+        <p>
+          Email: <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </p>
+        <p>
+          Graduate School of Environmental Science, Hokkaido University
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 S. Tutiyoshida</p>
+  </footer>
 
 </body>
 </html>
