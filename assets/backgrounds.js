@@ -21,8 +21,10 @@
     const primary = groups[0].length ? groups[0] : groups.flat();
     if (!primary.length) return;
     const selected = primary[Math.floor(Math.random() * primary.length)];
-    document.body.style.setProperty("--random-background", `url("${selected}")`);
-    document.body.classList.add("has-random-background");
+    document.body.style.backgroundImage = `linear-gradient(180deg, rgba(7, 38, 50, 0.18), rgba(5, 42, 55, 0.56)), url("${selected}")`;
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
   }
 
   applyRandomBackground().catch(() => {});
