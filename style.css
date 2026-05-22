@@ -5,6 +5,7 @@
   --link: #0057a8;
   --paper: #fff;
   --background: #f7f7f7;
+  --nav-hover: #eef5fb;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 }
 
 .page {
-  max-width: 920px;
+  max-width: 960px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 48px 28px 80px;
@@ -43,23 +44,46 @@ body {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 16px;
+  gap: 6px 8px;
   padding: 10px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
 }
 
-.nav a,
-a {
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 2px 7px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: var(--nav-hover);
   color: var(--link);
   text-decoration: none;
 }
 
-.nav a {
-  color: #333;
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
 }
 
 a:hover {
@@ -130,6 +154,10 @@ code {
   align-items: start;
 }
 
+.page-lead {
+  max-width: 720px;
+}
+
 .project-list {
   display: grid;
   gap: 28px;
@@ -146,6 +174,15 @@ code {
   width: 100%;
 }
 
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: #fbfbfb;
+}
+
 .image-placeholder {
   display: grid;
   min-height: 160px;
@@ -160,14 +197,24 @@ code {
   text-align: center;
 }
 
-.profile-slot .image-placeholder {
-  min-height: 260px;
-}
-
-.gallery-grid {
+.gallery-grid,
+.link-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+}
+
+.link-grid a {
+  display: block;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.link-grid a:hover {
+  background: var(--nav-hover);
+  text-decoration: none;
 }
 
 .site-footer {
@@ -178,15 +225,20 @@ code {
   font-size: 0.9rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .intro,
   .project-item,
-  .gallery-grid {
+  .gallery-grid,
+  .link-grid {
     grid-template-columns: 1fr;
   }
 
   .compact-list {
     columns: 1;
+  }
+
+  .profile-photo {
+    max-width: 260px;
   }
 }
 
@@ -204,6 +256,7 @@ code {
   }
 
   .nav {
-    gap: 8px 12px;
+    gap: 6px;
+    font-size: 0.76rem;
   }
 }
