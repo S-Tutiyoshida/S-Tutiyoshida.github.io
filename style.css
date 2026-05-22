@@ -281,8 +281,8 @@ code {
 
 .presentation-list {
   margin: 8px 0 0;
-  padding-left: 26px;
-  list-style: disc;
+  padding-left: 0;
+  list-style: none;
 }
 
 .presentation-list li {
@@ -292,6 +292,18 @@ code {
 
 .presentation-list li:last-child {
   border-bottom: 1px solid var(--line);
+}
+
+.presentation-label {
+  display: inline-block;
+  min-width: 5.8em;
+  margin-right: 0.45em;
+  color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .presentation-note {
