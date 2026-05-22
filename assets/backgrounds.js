@@ -5,6 +5,10 @@
   const imagePattern = /\.(avif|webp|jpe?g|png|gif)$/i;
   const excluded = new Set(["README.md", "icons.svg", "猫.JPG"]);
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+
   async function listImages(folder) {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folder}?ref=main`;
     const response = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
