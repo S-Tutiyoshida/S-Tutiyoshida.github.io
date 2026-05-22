@@ -281,8 +281,8 @@ code {
 
 .presentation-list {
   margin: 8px 0 0;
-  padding-left: 0;
-  list-style: none;
+  padding-left: 26px;
+  list-style: disc;
 }
 
 .presentation-list li {
