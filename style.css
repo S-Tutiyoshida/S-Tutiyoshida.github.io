@@ -1,12 +1,12 @@
 :root {
   --text: #222;
   --muted: #666;
-  --line: #d2d8d8;
+  --line: #c7d5d7;
   --link: #005a8f;
-  --paper: rgba(255, 255, 255, 0.95);
-  --background: #eef3f2;
-  --nav-hover: #e8f2f3;
-  --accent: #2d6f73;
+  --paper: rgba(255, 255, 255, 0.94);
+  --background: #0f5f78;
+  --nav-hover: #e4f1f3;
+  --accent: #1f6f7a;
   --font-body: "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --font-ui: Arial, Helvetica, sans-serif;
 }
@@ -20,10 +20,12 @@ body {
   margin: 0;
   background-color: var(--background);
   background-image:
-    linear-gradient(145deg, rgba(46, 111, 115, 0.16), rgba(255, 255, 255, 0.2) 42%, rgba(116, 86, 55, 0.08)),
-    repeating-linear-gradient(115deg, rgba(45, 111, 115, 0.09) 0 1px, transparent 1px 34px),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px 42px);
-  background-attachment: fixed;
+    linear-gradient(180deg, rgba(199, 232, 238, 0.92) 0%, rgba(72, 154, 174, 0.92) 30%, rgba(15, 95, 120, 0.98) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='96' viewBox='0 0 220 96'%3E%3Cpath d='M0 34 C28 12 55 12 84 34 S141 56 170 34 S221 12 250 34' fill='none' stroke='%23ffffff' stroke-opacity='.20' stroke-width='2'/%3E%3Cpath d='M-36 68 C-5 46 27 46 58 68 S120 90 151 68 S213 46 244 68' fill='none' stroke='%23073f55' stroke-opacity='.15' stroke-width='2'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(103deg, rgba(255, 255, 255, 0.13) 0 2px, transparent 2px 46px),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.22), transparent 42%);
+  background-attachment: fixed, fixed, fixed, fixed;
+  background-size: cover, 220px 96px, 360px 360px, cover;
   color: var(--text);
   font-family: var(--font-body);
   font-size: 17px;
@@ -36,7 +38,7 @@ body {
   margin: 0 auto;
   padding: 48px 28px 80px;
   background: var(--paper);
-  box-shadow: 0 0 0 1px rgba(32, 64, 66, 0.08), 0 24px 70px rgba(32, 64, 66, 0.14);
+  box-shadow: 0 0 0 1px rgba(9, 58, 72, 0.16), 0 26px 80px rgba(4, 42, 56, 0.32);
 }
 
 .site-header {
