@@ -149,7 +149,7 @@ code {
 .intro,
 .project-item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   gap: 32px;
   align-items: start;
 }
@@ -177,7 +177,7 @@ code {
 .profile-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--line);
   background: #fbfbfb;
@@ -238,7 +238,7 @@ code {
   }
 
   .profile-photo {
-    max-width: 260px;
+    max-width: 320px;
   }
 }
 
