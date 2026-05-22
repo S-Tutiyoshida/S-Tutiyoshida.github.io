@@ -1,7 +1,7 @@
 (function () {
   const owner = "Shinnosuke-Yoshida";
   const repo = "Shinnosuke-Yoshida.github.io";
-  const backgroundFolders = ["assets/backgronds", "assets/backgrounds", "assets/images", "assets"];
+  const backgroundFolders = ["assets/backgrounds"];
   const iconFolders = ["assets/icon"];
   const imagePattern = /\.(avif|webp|jpe?g|png|gif|svg)$/i;
   const excluded = new Set(["README.md", "icons.svg", "猫.JPG"]);
@@ -26,9 +26,7 @@
   }
 
   async function applyRandomBackground() {
-    const groups = await Promise.all(backgroundFolders.map(listImages));
-    const primary = groups.find((group) => group.length) || [];
-    const images = primary.length ? primary : groups.flat();
+    const images = (await Promise.all(backgroundFolders.map(listImages))).flat();
     if (!images.length) return;
     const selected = pick(images);
     document.body.style.backgroundImage = `linear-gradient(180deg, rgba(7, 38, 50, 0.18), rgba(5, 42, 55, 0.56)), url("${selected}")`;
@@ -38,8 +36,7 @@
   }
 
   async function applyRandomIcon() {
-    const groups = await Promise.all(iconFolders.map(listImages));
-    const icons = groups.flat();
+    const icons = (await Promise.all(iconFolders.map(listImages))).flat();
     if (!icons.length) return;
     const identity = document.querySelector('.identity');
     const heading = identity && identity.querySelector('h1');
