@@ -1,8 +1,9 @@
 (function () {
   const owner = "Shinnosuke-Yoshida";
   const repo = "Shinnosuke-Yoshida.github.io";
-  const folders = ["assets/backgrounds", "assets/images", "assets"];
-  const imagePattern = /\.(avif|webp|jpe?g|png|gif)$/i;
+  const backgroundFolders = ["assets/backgronds", "assets/backgrounds", "assets/images", "assets"];
+  const iconFolders = ["assets/icon"];
+  const imagePattern = /\.(avif|webp|jpe?g|png|gif|svg)$/i;
   const excluded = new Set(["README.md", "icons.svg", "猫.JPG"]);
 
   if ('serviceWorker' in navigator) {
@@ -20,16 +21,45 @@
       .map((item) => item.download_url || `/${item.path}`);
   }
 
+  function pick(items) {
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
   async function applyRandomBackground() {
-    const groups = await Promise.all(folders.map(listImages));
-    const primary = groups[0].length ? groups[0] : groups.flat();
-    if (!primary.length) return;
-    const selected = primary[Math.floor(Math.random() * primary.length)];
+    const groups = await Promise.all(backgroundFolders.map(listImages));
+    const primary = groups.find((group) => group.length) || [];
+    const images = primary.length ? primary : groups.flat();
+    if (!images.length) return;
+    const selected = pick(images);
     document.body.style.backgroundImage = `linear-gradient(180deg, rgba(7, 38, 50, 0.18), rgba(5, 42, 55, 0.56)), url("${selected}")`;
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
   }
 
+  async function applyRandomIcon() {
+    const groups = await Promise.all(iconFolders.map(listImages));
+    const icons = groups.flat();
+    if (!icons.length) return;
+    const identity = document.querySelector('.identity');
+    const heading = identity && identity.querySelector('h1');
+    if (!identity || !heading || identity.querySelector('.random-name-icon')) return;
+
+    const icon = document.createElement('img');
+    icon.className = 'random-name-icon';
+    icon.src = pick(icons);
+    icon.alt = '';
+    icon.style.width = '42px';
+    icon.style.height = '42px';
+    icon.style.objectFit = 'cover';
+    icon.style.border = '1px solid var(--line)';
+    icon.style.borderRadius = '50%';
+    icon.style.marginRight = '12px';
+    icon.style.verticalAlign = 'middle';
+
+    heading.prepend(icon);
+  }
+
   applyRandomBackground().catch(() => {});
+  applyRandomIcon().catch(() => {});
 })();
