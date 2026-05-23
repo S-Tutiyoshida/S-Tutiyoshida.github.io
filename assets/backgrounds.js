@@ -46,12 +46,12 @@
     icon.className = 'random-name-icon';
     icon.src = pick(icons);
     icon.alt = '';
-    icon.style.width = '96px';
-    icon.style.height = '96px';
+    icon.style.width = '128px';
+    icon.style.height = '128px';
     icon.style.objectFit = 'cover';
     icon.style.border = '1px solid var(--line)';
     icon.style.borderRadius = '50%';
-    icon.style.marginRight = '18px';
+    icon.style.marginRight = '22px';
     icon.style.verticalAlign = 'middle';
 
     heading.prepend(icon);
